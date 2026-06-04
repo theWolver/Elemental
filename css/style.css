@@ -1,0 +1,432 @@
+body {
+    background: url(../images/greater-fire-elemental-1.png) center/cover no-repeat;
+    /*background: #241F21;*/
+    color: #F5E7D0;
+    font-family: 'Cinzel', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+h1 {
+    margin-bottom: 3rem;
+}
+
+.none-padding {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.content {
+    background: rgba(0,0,0,.65);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,120,0,.4);
+    border-radius: 12px;
+
+    padding: 30px;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.chain-mask, .chain-mask-start {
+    position: relative;
+    border: 1px solid rgba(255,120,0,.4);
+    border-radius: 12px;
+
+    padding: 30px;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.chain-mask::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: rgba(0,0,0,.65);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+
+    -webkit-mask-image:
+            radial-gradient(circle 20px at 50% 15%, transparent 100%, black 100%),
+            radial-gradient(circle 20px at 50% 85%, transparent 100%, black 100%);
+    mask-image:
+            radial-gradient(circle 20px at 50% 15%, transparent 100%, black 100%),
+            radial-gradient(circle 20px at 50% 85%, transparent 100%, black 100%);
+
+    -webkit-mask-position: 50% 0, 50% 100%;
+    mask-position: 50% 0, 50% 100%;
+
+    -webkit-mask-size: 100% 50%,100% 50%;
+    mask-size: 100% 50%, 100% 50%;
+
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    mask-repeat: no-repeat, no-repeat;
+}
+
+.chain-mask-start::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: rgba(0,0,0,.65);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+
+    -webkit-mask-image:
+            radial-gradient(circle 20px at 50% 93%, transparent 100%, black 100%);
+    mask-image:
+            radial-gradient(circle 20px at 50% 93%, transparent 100%, black 100%);
+
+    -webkit-mask-position: 0 100%;
+    mask-position: 0 100%;
+
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+.chain-mask-end::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: rgba(0,0,0,.65);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+
+    -webkit-mask-image:
+            radial-gradient(circle 20px at 50% 8%, transparent 100%, black 100%);
+    mask-image:
+            radial-gradient(circle 20px at 50% 8%, transparent 100%, black 100%);
+
+    -webkit-mask-position: 0 100%;
+    mask-position: 0 100%;
+
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+.content p {
+    position: relative;
+    z-index: 1;
+}
+
+.chain {
+    position: absolute;
+    margin: 0 auto;
+    width: 60px;
+    height: 200px;
+    top: 87%;
+    z-index: 4;
+}
+
+/* ---------- header ---------- */
+header {
+    position: relative;
+    background: #241F21;
+    height: 60px;
+}
+
+/* ---------- ng-grade-section ---------- */
+.ng-grade-section {
+    animation: fadeIn 5s ease forwards;
+    animation-delay: 2s;
+    opacity: 0; /* скрыта до начала анимации */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.ng-grade-section {
+    position: relative;
+}
+
+.fire-ornament {
+    background: url(../images/fire-ornament.png) center/contain repeat;
+    height: 74px;
+    margin-bottom: 50px;
+    position: relative;
+    top: -25px;
+}
+
+.section-description {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+.section-description p {
+    text-indent: 2em;
+}
+
+.class-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.class-image-wrapper {
+    margin-bottom: 100px;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+.class-image {
+    /*width: 180px;
+    height: 180px;*/
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.class-column h3 {
+    text-align: center;
+}
+
+.ng-level-card {
+    position: relative;
+    width: 100%;
+    margin-bottom: 75px;
+    padding: 20px;
+    user-select: none;
+}
+
+.level-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.frame-wrapper {
+    position: relative;
+    height: 250px;
+    margin: 0 auto;
+}
+.bg-elemental-class {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    z-index: 1;
+}
+.frame-elemental-class {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 2; /* Рамка выше фона */
+    pointer-events: none; /* Чтобы рамка не мешала кликам, если внутри будут ссылки */
+}
+.icon-elemental-class {
+    height: 250px;
+    z-index: 2;
+    position: relative;
+}
+
+.bg-mage {
+    background: url(../images/bg-mage.png) center/cover no-repeat;
+    /* МАГИЯ: этот слой виден только там, где закрашена маска */
+    /* frame-mask.png — это силуэт (заливка) внутренней части нашей рамки */
+    -webkit-mask-image: url(../images/frame-mage-mask-500-820.png);
+    mask-image: url(../images/frame-mage-mask-500-820.png);
+}
+.frame-mage {
+    /* картинка рамочки с прозрачностью внутри и снаружи */
+    background: url(../images/frame-mage-500-820.png) center/contain no-repeat;
+}
+#ng-grade-mage .class-column > div:nth-of-type(2) .frame-mage,
+#ng-grade-mage .class-column > div:nth-of-type(4) .frame-mage,
+#ng-grade-mage .class-column > div:nth-of-type(5) .frame-mage,
+#ng-grade-mage .class-column > div:nth-of-type(6) .frame-mage {
+    z-index: 3!important; /* Рамка выше фона */
+}
+.icon-mage-1 {
+    background: url(../images/icon-mage-1-Sparklet-1.png) center/contain no-repeat;
+}
+.icon-mage-2 {
+    background: url(../images/icon-mage-2-The_Smolder-without-frame.png) center/contain no-repeat;
+}
+.icon-mage-3 {
+    background: url(../images/icon-mage-3-Fire_Wisp-1.png) center/contain no-repeat;
+}
+.icon-mage-4 {
+    background: url(../images/icon-mage-4-Flame-tongue.png) center/contain no-repeat;
+}
+.icon-mage-5 {
+    /*background: url(../images/icon-mage-5-Pyrosprite.png) center/70% no-repeat;*/
+    background: url(../images/icon-mage-5-Pyrosprite.png) center/contain no-repeat;
+}
+
+.bg-archer {
+    background: url(../images/bg-archer.jpg) center/cover no-repeat;
+    /* МАГИЯ: этот слой виден только там, где закрашена маска */
+    /* frame-mask.png — это силуэт (заливка) внутренней части нашей рамки */
+    -webkit-mask-image: url(../images/frame-archer-mask-500-820.png);
+    mask-image: url(../images/frame-archer-mask-500-820.png);
+}
+.frame-archer {
+    /* картинка рамочки с прозрачностью внутри и снаружи */
+    background: url(../images/frame-archer-500-820.png) center/contain no-repeat;
+}
+.icon-archer-1 {
+    background: url(../images/icon-archer-1-Spark-1.png) center/contain no-repeat;
+}
+.icon-archer-2 {
+    background: url(../images/icon-archer-2-Glimmer-1.png) center/contain no-repeat;
+}
+.icon-archer-3 {
+    background: url(../images/icon-archer-3-Flare-1.png) center/contain no-repeat;
+}
+.icon-archer-4 {
+    background: url(../images/icon-archer-4-Blazeling-1.png) center/contain no-repeat;
+}
+.icon-archer-5 {
+    background: url(../images/icon-archer-5-Cinder-sprout-1.png) center/contain no-repeat;
+}
+
+.bg-tank {
+    background: url(../images/bg-tank.jpg) center/cover no-repeat;
+    /* МАГИЯ: этот слой виден только там, где закрашена маска */
+    /* frame-mask.png — это силуэт (заливка) внутренней части нашей рамки */
+    -webkit-mask-image: url(../images/frame-tank-mask-500-820.png);
+    mask-image: url(../images/frame-tank-mask-500-820.png);
+}
+.frame-tank {
+    /* картинка рамочки с прозрачностью внутри и снаружи */
+    background: url(../images/frame-tank-500-820.png) center/contain no-repeat;
+    z-index: 3!important;
+}
+.icon-tank-1 {
+    background: url(../images/icon-tank-1-Kindling.png) center/contain no-repeat;
+}
+.icon-tank-2 {
+    background: url(../images/icon-tank-2-Emberling.png) center/contain no-repeat;
+}
+.icon-tank-3 {
+    background: url(../images/icon-tank-3-Cinderlet.png) center/contain no-repeat;
+}
+.icon-tank-4 {
+    background: url(../images/icon-tank-4-Magma-mite.png) center/contain no-repeat;
+}
+.icon-tank-5 {
+    background: url(../images/icon-tank-5-Hearth-ling.png) center/contain no-repeat;
+}
+
+.level-name,
+.level-short-description {
+    text-align: center;
+}
+
+.level-name {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    min-height: 58px;
+}
+
+.level-short-description {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.level-description {
+    height: 100px;          /* фиксируем высоту */
+    overflow: hidden;       /* обрезаем текст */
+    margin-bottom: 60px;
+    position: relative;
+    transition: height 1.35s ease;
+}
+
+.level-description:hover {
+    cursor: pointer;
+}
+.ng-level-card:hover {
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
+
+/* мягкое исчезновение снизу */
+.level-description::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+    pointer-events: none;
+
+   /* background: linear-gradient(
+            to bottom,
+            rgba(36, 31, 33, 0) 0%,
+            rgba(36, 31, 33, 1) 100%
+    );*/
+}
+
+
+/* ======================================================================== */
+/* ============================ MEDIA-запросы ============================= */
+/* ======================================================================== */
+@media screen and (min-width: 1300px) {
+    .container {
+        max-width: 1240px;
+    }
+}
+@media screen and (min-width: 1400px) {
+    .container {
+        max-width: 1340px;
+    }
+}
+@media screen and (min-width: 1500px) {
+    .container {
+        max-width: 1440px;
+    }
+}
+@media screen and (min-width: 1600px) {
+    .container {
+        max-width: 1540px;
+    }
+
+    #fh5co-services {
+        padding: 2.5em 0;
+    }
+}
+/*@media screen and (min-width: 1900px) {
+    .container {
+        max-width: 1750px;
+    }
+    #fh5co-explore {
+        padding: 2.5em 0;
+    }
+}*/
+
+/*@media (min-width: 768px) {
+    .ng-level-card {
+        margin-bottom: 75px;
+    }
+}*/
+
