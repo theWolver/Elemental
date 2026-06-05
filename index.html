@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Elemetrals</title>
+    <title>Fire Elementals</title>
 </head>
 <body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -377,15 +377,19 @@
             description.toggleClass('expanded');
         });
 
+        showFadeItem();
+
         /**
          * ф-ция анимирует появление блоков секции .ng-grade-section через data-атрибуты. Сначала появляются блоки с data-step,
          * затем блоки из колонок, причём синхронно 1-й с каждой колонки, затем 2-й и т.д.
+         * Самое главное действие ф-ции: дать класс .show всем блокам с классом .fade-item. По умолчанию они прозрачны (opacity = 0),
+         * и чтобы их показать + не сломать blur (backdrop-filter: blur(8px)) - сделали через добавление класса .show
          */
-        $(function () {
+        function showFadeItem() {
             // 1) Сначала одиночные блоки
             const introBlocks = $('.fade-item[data-step]');
             introBlocks.each(function () {
-                const step = parseInt($(this).data('step'));
+                const step = Number($(this).data('step'));
                 setTimeout(() => {
                     $(this).addClass('show');
                 }, step * 1000); // можно 1000ms между шагами
@@ -406,7 +410,7 @@
                     }, delayStart + row * 1000);
                 });
             }
-        });
+        }
     });
 </script>
 </body>
